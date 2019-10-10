@@ -969,6 +969,11 @@ cron.schedule('0 0 0 * * *', () => {
     con.query("UPDATE account SET balance=`balance`+`ant6`*"+balance+",day=`day`+1 WHERE ant6>=1")
 
 })
+//ref
+cron.schedule('0 0 0 * * *', () => {
+    let balance=0.000001
+    con.query("UPDATE account SET balance=`balance`+`friends`*"+balance+" WHERE friends>=1")
 
+})
 
 bot.startPolling()
